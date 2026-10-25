@@ -190,4 +190,40 @@ h3 { color: var(--navy); line-height: 1.3; }
   .motion-ready [data-reveal] { opacity: 1; transform: none; transition: none; }
 }
 
+.membership-dialog { width: min(760px, calc(100% - 28px)); max-width: 760px; max-height: min(92vh, 900px); padding: 0; overflow: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--ink); box-shadow: 0 28px 90px rgba(5,22,45,.28); }
+.membership-dialog::backdrop { background: rgba(5,22,45,.66); backdrop-filter: blur(3px); }
+.membership-dialog-inner { position: relative; padding: clamp(24px, 5vw, 46px); }
+.dialog-close { position: sticky; top: 0; z-index: 1; float: right; display: grid; width: 40px; height: 40px; margin: -12px -12px 0 12px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--navy); cursor: pointer; font-size: 27px; line-height: 1; }
+.membership-dialog h2 { margin: 0 45px 12px 0; font-size: clamp(30px, 4.5vw, 42px); }
+.application-intro { max-width: 620px; margin: 0 0 24px; color: var(--muted); font-size: 15px; }
+.application-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.application-grid label { display: block; min-width: 0; color: #34485b; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.application-grid label > span { color: var(--teal); }
+.application-grid input, .application-grid select, .application-grid textarea { display: block; width: 100%; min-height: 48px; margin-top: 7px; padding: 11px 12px; border: 1px solid #cbd8dc; border-radius: 4px; background: #fff; color: var(--ink); font: 400 15px/1.5 var(--body); }
+.application-grid textarea { min-height: 92px; resize: vertical; }
+.application-grid input:focus, .application-grid select:focus, .application-grid textarea:focus { outline: 3px solid rgba(0,143,131,.2); border-color: var(--teal); }
+.application-wide { grid-column: 1 / -1; }
+.social-profiles { margin: 24px 0 0; padding: 18px 0 0; border: 0; border-top: 1px solid var(--line); }
+.social-profiles legend { padding: 0; color: var(--navy); font: 700 16px var(--display); }
+.field-optional { color: var(--muted); font: 400 13px var(--body); }
+.field-hint { margin: 7px 0 14px; color: var(--muted); font-size: 13px; }
+.field-error { min-height: 0; margin: 0; color: #a52a37; font-size: 13px; }
+.field-error:not(:empty) { margin-top: 10px; }
+.application-grid [aria-invalid="true"] { border-color: #a52a37; }
+.form-submit { margin-top: 22px; cursor: pointer; }
+.form-submit:disabled { cursor: wait; opacity: .68; }
+.application-status { min-height: 1.5em; margin: 12px 0 0; color: #a52a37; font-size: 14px; }
+.application-status[data-state="success"] { color: #08745e; }
+.application-success { padding-top: 12px; }
+.application-success p:not(.eyebrow) { max-width: 600px; margin: 12px 0 23px; color: var(--muted); font-size: 16px; }
+@media (max-width: 600px) {
+  .membership-dialog { width: calc(100% - 18px); max-height: 95vh; border-radius: 8px; }
+  .membership-dialog-inner { padding: 24px 18px; }
+  .application-grid { grid-template-columns: 1fr; gap: 13px; }
+  .application-wide { grid-column: auto; }
+  .field-optional { display: block; margin-top: 5px; }
+  .dialog-close { margin: -7px -6px 0 10px; }
+  .form-submit { width: 100%; }
+}
+
 

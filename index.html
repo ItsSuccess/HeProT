@@ -12,7 +12,7 @@
   <header class="site-header"><div class="container nav-wrap">
     <a class="brand" href="#home" aria-label="HeProT home"><img src="logo.png" alt="HeProT — Health Professionals in Tech"></a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="#about">About</a><a href="#build">BUILD framework</a><a href="#faq">FAQ</a><a class="button button-small whatsapp-cta cta-disabled" data-whatsapp-cta aria-disabled="true" tabindex="-1">Join our WhatsApp community <span aria-hidden="true">↗</span></a></nav>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="#about">About</a><a href="#build">BUILD framework</a><a href="#faq">FAQ</a><a class="button button-small" href="#join" data-open-membership-form>Apply to join HeProT <span aria-hidden="true">↗</span></a></nav>
   </div></header>
   <main id="main">
     <section class="hero section" id="home"><div class="container hero-grid">
@@ -20,7 +20,7 @@
         <h1>From Healthcare<br>To <span>Tech</span></h1>
         <p class="hero-lead">HeProT is a community for healthcare professionals and students exploring tech—learning what they need, building solutions and supporting one another through the transition.</p>
         <p class="hero-support">Learn with purpose. Build with intention. Keep showing up.</p>
-        <div class="button-row"><a class="button whatsapp-cta cta-disabled" data-whatsapp-cta aria-disabled="true" tabindex="-1">Join our WhatsApp community <span aria-hidden="true">↗</span></a><a class="text-link" href="#about">Learn about HeProT <span aria-hidden="true">↓</span></a></div>
+        <div class="button-row"><a class="button" href="#join" data-open-membership-form>Apply to join HeProT <span aria-hidden="true">↗</span></a><a class="text-link" href="#about">Learn about HeProT <span aria-hidden="true">↓</span></a></div>
       </div>
       <figure class="hero-art hero-community"><img src="https://images.unsplash.com/photo-1630068846062-3ffe78aa5049?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=85&amp;w=1200" alt="A group of people stacking their hands together in unity"><figcaption>Learn, build and grow together.</figcaption></figure>
     </div></section>
@@ -42,15 +42,55 @@
     <section class="section section-white compact-faq" id="faq"><div class="container faq-grid"><div><p class="eyebrow">FAQ</p><h2>A few quick<br><span>answers.</span></h2></div><div class="faq-list">
       <details><summary>Do I need technology experience?<span>+</span></summary><p>No. Curiosity, consistency and a willingness to contribute matter more than prior experience.</p></details>
       <details><summary>Do I need to leave healthcare?<span>+</span></summary><p>No. Technology can complement your current work or lead to new paths.</p></details>
-      <details><summary>How do I join the community?<span>+</span></summary><p>Choose “Join our WhatsApp community” to open the HeProT invite link.</p></details>
+      <details><summary>How do I apply to join HeProT?<span>+</span></summary><p>Complete the application form. Your application will be reviewed; submitting it does not automatically mean your membership is approved. You can continue to the WhatsApp Community after submitting.</p></details>
       <details><summary>Does HeProT guarantee a job or income?<span>+</span></summary><p>No. HeProT makes no guarantees about jobs, income, scholarships or funding.</p></details>
     </div></div></section>
 
-    <section class="join-section" id="join"><div class="container"><div class="community-cta"><p class="eyebrow eyebrow-light">TAKE THE NEXT STEP</p><h2>Do the work.<br><span>Build with community.</span></h2><p>Join healthcare professionals who are accountable, ready to learn and committed to making the transition into tech.</p><a class="button button-light whatsapp-cta cta-disabled" data-whatsapp-cta aria-disabled="true" tabindex="-1">Join our WhatsApp community <span aria-hidden="true">↗</span></a><p class="invite-note">The community invite link will be connected when it’s provided.</p></div></div></section>
+    <section class="join-section" id="join"><div class="container"><div class="community-cta"><p class="eyebrow eyebrow-light">TAKE THE NEXT STEP</p><h2>Do the work.<br><span>Build with community.</span></h2><p>Apply to join a community of healthcare professionals who are accountable, ready to learn and committed to making the transition into tech.</p><a class="button button-light" href="#join" data-open-membership-form>Apply to join HeProT <span aria-hidden="true">↗</span></a><p class="invite-note">Your application will be reviewed. You can continue to the WhatsApp Community after submitting.</p></div></div></section>
 
-    <details class="legal-disclosure" id="privacy"><summary>Privacy & terms <span>+</span></summary><div class="container"><p>This website does not collect registration details. If you choose to join, the WhatsApp invite opens an external service governed by WhatsApp’s privacy terms. Do not share confidential health or personal information in the community.</p><p>Use the website lawfully. The information here is general and may change as HeProT develops.</p></div></details>
+    <details class="legal-disclosure" id="privacy"><summary>Privacy & terms <span>+</span></summary><div class="container"><p>When you apply, HeProT collects the information in the membership application and stores it in Supabase for application review. Do not include confidential health or patient information. The WhatsApp invitation opens an external service governed by WhatsApp’s privacy terms.</p><p>Use the website lawfully. The information here is general and may change as HeProT develops.</p></div></details>
   </main>
-  <footer class="site-footer"><div class="container footer-top"><a class="footer-logo" href="#home"><img src="logo.png" alt="HeProT — Health Professionals in Tech"></a><p>Health Professionals in Tech.<br>Learn with purpose. Build with intention.</p><a class="text-link whatsapp-cta cta-disabled" data-whatsapp-cta aria-disabled="true" tabindex="-1">Join our WhatsApp community <span>↗</span></a></div><div class="container footer-bottom"><span>© <span id="year"></span> HeProT</span><div><a href="#privacy">Privacy & terms</a><a href="#faq">FAQ</a></div><a href="#home" class="back-top">Back to top ↑</a></div></footer>
+  <dialog class="membership-dialog" id="membership-dialog" aria-labelledby="application-title">
+    <div class="membership-dialog-inner">
+      <button class="dialog-close" type="button" data-close-membership aria-label="Close application">×</button>
+      <section id="application-form-view">
+        <p class="eyebrow">HEPROT MEMBERSHIP APPLICATION</p>
+        <h2 id="application-title">Apply to join HeProT</h2>
+        <p class="application-intro">Tell us about your healthcare background, technology interests and goals. Submitting an application does not automatically mean your membership has been approved.</p>
+        <form id="membership-form" novalidate>
+          <div class="application-grid">
+            <label for="app-full-name">Full name <span aria-hidden="true">*</span><input id="app-full-name" name="full_name" autocomplete="name" maxlength="160" required></label>
+            <label for="app-email">Email address <span aria-hidden="true">*</span><input id="app-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+            <label for="app-profession">Healthcare profession <span aria-hidden="true">*</span><input id="app-profession" name="profession" maxlength="160" required></label>
+            <label for="app-status">Current status <span aria-hidden="true">*</span><select id="app-status" name="current_status" required><option value="">Choose your current status</option><option>Student</option><option>Graduate</option><option>Practising Professional</option></select></label>
+            <label class="application-wide" for="app-interest">Area of interest in technology <span aria-hidden="true">*</span><textarea id="app-interest" name="tech_interest" rows="3" required></textarea></label>
+            <label class="application-wide" for="app-reason">Reason for joining HeProT <span aria-hidden="true">*</span><textarea id="app-reason" name="reason_for_joining" rows="3" required></textarea></label>
+            <label class="application-wide" for="app-goals">Learning and career goals <span aria-hidden="true">*</span><textarea id="app-goals" name="goals" rows="3" required></textarea></label>
+          </div>
+          <fieldset class="social-profiles" aria-describedby="social-profile-help social-profile-error">
+            <legend>Social media profiles <span class="field-optional">(optional fields; at least one is required)</span></legend>
+            <p class="field-hint" id="social-profile-help">Enter a link to at least one profile. Use the full https:// profile URL.</p>
+            <div class="application-grid">
+              <label for="app-x">X<input id="app-x" name="x_profile" type="url" inputmode="url" placeholder="https://x.com/yourname"></label>
+              <label for="app-linkedin">LinkedIn<input id="app-linkedin" name="linkedin_profile" type="url" inputmode="url" placeholder="https://linkedin.com/in/yourname"></label>
+              <label for="app-instagram">Instagram<input id="app-instagram" name="instagram_profile" type="url" inputmode="url" placeholder="https://instagram.com/yourname"></label>
+              <label for="app-tiktok">TikTok<input id="app-tiktok" name="tiktok_profile" type="url" inputmode="url" placeholder="https://tiktok.com/@yourname"></label>
+            </div>
+            <p class="field-error" id="social-profile-error" role="alert"></p>
+          </fieldset>
+          <button class="button form-submit" id="application-submit" type="submit">Submit application</button>
+          <p class="application-status" id="application-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="application-success" id="application-success" hidden aria-labelledby="application-success-title">
+        <p class="eyebrow">APPLICATION RECEIVED</p>
+        <h2 id="application-success-title" tabindex="-1">Thank you for applying.</h2>
+        <p>Your application has been submitted and is pending review. Applying does not automatically mean your membership has been approved. You can continue to the HeProT WhatsApp Community now.</p>
+        <a class="button" id="application-whatsapp-link" target="_blank" rel="noopener noreferrer">Continue to the WhatsApp Community <span aria-hidden="true">↗</span></a>
+      </section>
+    </div>
+  </dialog>
+  <footer class="site-footer"><div class="container footer-top"><a class="footer-logo" href="#home"><img src="logo.png" alt="HeProT — Health Professionals in Tech"></a><p>Health Professionals in Tech.<br>Learn with purpose. Build with intention.</p><a class="text-link" href="#join" data-open-membership-form>Apply to join HeProT <span>↗</span></a></div><div class="container footer-bottom"><span>© <span id="year"></span> HeProT</span><div><a href="#privacy">Privacy & terms</a><a href="#faq">FAQ</a></div><a href="#home" class="back-top">Back to top ↑</a></div></footer>
   <script src="supabase-config.js"></script>
   <script src="supabase-client.js"></script>
   <script src="config.js"></script>

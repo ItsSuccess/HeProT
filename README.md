@@ -20,7 +20,9 @@ The WhatsApp community invite is configured in `config.js`. To change it later, 
 
 The site dynamically imports the official `@supabase/supabase-js` v2 browser ES module from jsDelivr and initializes one reusable client as `window.heprotSupabase`. The project URL and publishable key are in `supabase-config.js`. These browser-facing settings are public by design; never put a Supabase secret key, service-role key, or database password in this folder.
 
-No database tables, forms, or membership submissions are configured.
+The membership application form writes the requested fields to the existing `public.membership_applications` table and does not request returned rows. It relies on the table's existing columns, a `Pending` status default, and an RLS insert policy that permits public submissions while preventing reads and status changes. No database migration has been generated or applied because the live table and policies must be inspected first.
+
+After a successful insert, the form confirms that the application is pending review and offers the existing WhatsApp Community invitation. An application does not mean membership approval.
 
 ### Safely check the connection
 
